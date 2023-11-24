@@ -1,0 +1,2 @@
+# ETH-AVAX-MODULE
+This is the repo for the ETH AVAX METACRAFTERS MODULE
