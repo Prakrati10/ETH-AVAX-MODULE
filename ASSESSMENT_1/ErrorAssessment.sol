@@ -6,14 +6,15 @@ contract Limiter {
     uint public newNumber;
 
     function testAssert(uint _num) public pure {
-        assert(_num < maxNumber);
-        revert("Maximum of 25 expected");
+        if (_num > maxNumber) {
+            revert("Maximum of 25 expected");
+        }
     }
 
     function testRequire(uint _num) public {
-        require(_num > 10, "Minimum of 11 expected");
-        // Only get to this line if the parameter _num is greater than 10
-        // Set the newNumber to the number passed in as a parameter
+        require(_num >= 10, "Minimum of 10 expected");
         newNumber = newNumber + _num;
+        // This function will fail the second time it is ran, because the assert will fail the second time
+        assert(newNumber == _num);
     }
 }
