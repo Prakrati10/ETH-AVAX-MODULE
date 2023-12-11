@@ -4,8 +4,8 @@ pragma solidity ^0.8.9;
 //import "hardhat/console.sol";
 
 contract Assessment {
-    uint256 public age = 8;
-    string public name = "Anonymous";
+    uint256 public age = 10;
+    string public name = "Default_Username";
 
     event NewAge(uint256 age);
     event NewName(string name);
